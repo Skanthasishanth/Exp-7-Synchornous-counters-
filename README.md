@@ -1,8 +1,11 @@
 # Exp-6-Synchornous-counters - up counter and down counter 
-### AIM: To implement 4 bit up and down counters and validate  functionality.
-### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
-### SOFTWARE REQUIRED:   Quartus prime
-### THEORY 
+### AIM : 
+To implement 4 bit up and down counters and validate  functionality.
+### HARDWARE REQUIRED :  
+PC, Cyclone II , USB flasher
+### SOFTWARE REQUIRED :   
+Quartus prime
+### THEORY :
 
 ## UP COUNTER 
 The counter is a digital sequential circuit and here it is a 4 bit counter, which simply means it can count from 0 to 15 and vice versa based upon the direction of counting (up/down). 
@@ -45,44 +48,101 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 
 4-bit Count Down Counter
-### Procedure
-/* write all the steps invloved */
+### Procedure :
 
+#### Step 1 :
 
+Create a new project in QuartusII software.
 
-### PROGRAM 
-/*
+#### Step 2 :
+
+Name the project as uc for upcounter and dc for down counter.
+
+#### Step 3 :
+
+Create a new verilog hdl file in the project file.
+
+#### Step 4 :
+
+Name the module as dc and uc for down counter and up counter.
+
+#### Step 5 :
+
+Within the module declare input and output variables.
+
+#### Step 6 :
+
+Create a loop using if-else with condition parameter as reset value.
+
+#### Step 7 :
+
+End the loop.
+
+#### Step 8 :
+
+End the module.
+
+### PROGRAM :
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by : S Kantha Sishanth
+RegisterNumber : 22007660
+```
+```
+* UP COUNTER :
+
+module UPCOUNTER(input clk,input reset,output[0:3]counter);
+reg[0:3] counter_up;
+always@(posedge clk or posedge reset)
+begin
+if(reset)
+counter_up<=4'd0;
+else
+counter_up<=counter_up+4'd1;
+end
+assign counter=counter_up;
+endmodule
+
+* DOWN COUNTER :
+
+module DOWNCOUNTER(input clk,input reset,output[0:3]counter);
+reg[0:3] counter_down;
+always@(posedge clk or posedge reset)
+begin
+if(reset)
+counter_down<=4'd0;
+else
+counter_down<=counter_down-4'd1;
+end
+assign counter=counter_down;
+endmodule
+```
+
+### RTL LOGIC UP COUNTER AND DOWN COUNTER :
+#### UP Counter 
+![UP](https://github.com/Skanthasishanth/Exp-7-Synchornous-counters-/blob/main/UP.png)
+
+#### DOWN Counter
+![DOWN](https://github.com/Skanthasishanth/Exp-7-Synchornous-counters-/blob/main/DOWN.png)
+
+
+### TIMING DIAGRAMS FOR COUNTER :
+#### UP Counter 
+![UP TD](https://github.com/Skanthasishanth/Exp-7-Synchornous-counters-/blob/main/UP%20Counter%20TD.png)
+#### DOWN Counter
+![DOWN TD](https://github.com/Skanthasishanth/Exp-7-Synchornous-counters-/blob/main/DOWN%20Counter%20TD.png)
 
 
 
+### TRUTH TABLE :
+#### UP Counter 
+![UP TT](https://github.com/Skanthasishanth/Exp-7-Synchornous-counters-/blob/main/UP%20Counter%20TT.png)
+
+#### DOWN Counter
+
+![DOWN TT](https://github.com/Skanthasishanth/Exp-7-Synchornous-counters-/blob/main/DOWN%20Counter%20TT.png)
 
 
 
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
-
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS FOR COUNTER  
-
-
-
-
-
-### TRUTH TABLE 
-
-
-
-
-
-
-### RESULTS 
+### RESULT :
+Thus Synchornous counters up counter and down counter circuit are studied and the truth table for different logic gates are verified.
